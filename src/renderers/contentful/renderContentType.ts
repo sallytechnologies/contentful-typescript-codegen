@@ -63,12 +63,7 @@ function renderContentTypeFields(fields: Field[], localization: boolean): string
 
 function renderSys(sys: Sys) {
   return `
-    sys: {
-      id: string;
-      type: string;
-      createdAt: string;
-      updatedAt: string;
-      locale: string;
+    sys: EntrySys & {
       contentType: {
         sys: {
           id: '${sys.id}';
