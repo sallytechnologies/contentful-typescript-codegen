@@ -23,6 +23,10 @@ export default function renderContentType(contentType: ContentType, localization
 
     ${descriptionComment(contentType.description)}
     ${renderInterface({ name, extension: `Entry<${name}Fields>`, fields: sys })}
+
+    export const is${name} = (entry: IEntry): entry is ${name} => entry.sys.contentType.sys.id === '${
+    contentType.sys.id
+  }'
   `
 }
 

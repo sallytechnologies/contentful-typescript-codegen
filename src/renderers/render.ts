@@ -39,6 +39,7 @@ export default async function render(
   ].join("\n\n")
 
   const prettierConfig = await resolveConfig(process.cwd())
+
   return format(source, { ...prettierConfig, parser: "typescript" })
 }
 
